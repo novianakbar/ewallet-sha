@@ -1,4 +1,6 @@
 import 'package:bank_sha/shared/theme.dart';
+import 'package:bank_sha/ui/widget/button.dart';
+import 'package:bank_sha/ui/widget/profile_menu_item.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -8,18 +10,8 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: lightBackgroundColor,
-        elevation: 0,
-        centerTitle: true,
-        iconTheme: IconThemeData(
-          color: blackColor,
-        ),
-        title: Text(
+        title: const Text(
           'My Profile',
-          style: blackTextStyle.copyWith(
-            fontSize: 20,
-            fontWeight: semibold,
-          ),
         ),
       ),
       body: ListView(
@@ -31,6 +23,9 @@ class ProfilePage extends StatelessWidget {
             padding: const EdgeInsets.symmetric(
               horizontal: 30,
               vertical: 22,
+            ),
+            margin: const EdgeInsets.only(
+              top: 20,
             ),
             decoration: BoxDecoration(
               color: whiteColor,
@@ -75,9 +70,57 @@ class ProfilePage extends StatelessWidget {
                     fontWeight: medium,
                     fontSize: 18,
                   ),
-                )
+                ),
+                const SizedBox(
+                  height: 40,
+                ),
+                ProfileMenuItem(
+                  iconUrl: 'assets/ic_edit_profile.png',
+                  label: 'Edit Profile',
+                  onTap: () {
+                    Navigator.pushNamed(context, '/pin');
+                  },
+                ),
+                ProfileMenuItem(
+                  iconUrl: 'assets/ic_pin.png',
+                  label: 'My PIN',
+                  onTap: () {},
+                ),
+                ProfileMenuItem(
+                  iconUrl: 'assets/ic_wallet.png',
+                  label: 'Wallet Settings',
+                  onTap: () {},
+                ),
+                ProfileMenuItem(
+                  iconUrl: 'assets/ic_my_reward.png',
+                  label: 'My Rewards',
+                  onTap: () {},
+                ),
+                ProfileMenuItem(
+                  iconUrl: 'assets/ic_help.png',
+                  label: 'Help Center',
+                  onTap: () {},
+                ),
+                ProfileMenuItem(
+                  iconUrl: 'assets/ic_logout.png',
+                  label: 'Log Out',
+                  onTap: () {},
+                ),
               ],
             ),
+          ),
+          const SizedBox(
+            height: 50,
+          ),
+          CustomTextButton(
+            title: 'Report a Problem',
+            textStyle: greyTextStyle.copyWith(
+              fontSize: 16,
+            ),
+            onPressed: () {},
+          ),
+          const SizedBox(
+            height: 50,
           ),
         ],
       ),
