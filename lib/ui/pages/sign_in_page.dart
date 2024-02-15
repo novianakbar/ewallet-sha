@@ -75,6 +75,10 @@ class SignInPage extends StatelessWidget {
                     fontSize: 15,
                     fontWeight: semibold,
                   ),
+                  onPressed: () {
+                    Navigator.pushNamedAndRemoveUntil(
+                        context, '/home', (route) => false);
+                  },
                 ),
                 const SizedBox(
                   height: 50,
@@ -86,7 +90,9 @@ class SignInPage extends StatelessWidget {
                   textStyle: greyTextStyle.copyWith(
                     fontSize: 16,
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/sign-up');
+                  },
                 ),
               ],
             ),
