@@ -17,10 +17,10 @@ class ProfileEditPinPage extends StatelessWidget {
           horizontal: 24,
         ),
         children: [
+          const SizedBox(
+            height: 30,
+          ),
           Container(
-            margin: EdgeInsets.only(
-              top: 30,
-            ),
             padding: const EdgeInsets.all(22),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),

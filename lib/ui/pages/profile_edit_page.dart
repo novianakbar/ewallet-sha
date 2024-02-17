@@ -10,17 +10,17 @@ class ProfileEditPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Edit Profile'),
+        title: const Text('Edit Profile'),
       ),
       body: ListView(
-        padding: EdgeInsets.symmetric(
+        padding: const EdgeInsets.symmetric(
           horizontal: 24,
         ),
         children: [
+          const SizedBox(
+            height: 30,
+          ),
           Container(
-            margin: EdgeInsets.only(
-              top: 30,
-            ),
             padding: const EdgeInsets.all(22),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),

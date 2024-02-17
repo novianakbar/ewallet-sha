@@ -20,7 +20,7 @@ class SignInPage extends StatelessWidget {
             margin: const EdgeInsets.symmetric(
               vertical: 100,
             ),
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/img_logo_light.png'),
               ),

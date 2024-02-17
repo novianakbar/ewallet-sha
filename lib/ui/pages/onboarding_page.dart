@@ -110,7 +110,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                 fontWeight: semibold,
                               ),
                               onPressed: () {
-                                Navigator.pushNamed(context, '/sign-up');
+                                Navigator.pushNamedAndRemoveUntil(
+                                    context, '/sign-up', (route) => false);
                               },
                             ),
                             const SizedBox(
@@ -124,7 +125,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                 fontSize: 16,
                               ),
                               onPressed: () {
-                                Navigator.pushNamed(context, '/sign-in');
+                                Navigator.pushNamedAndRemoveUntil(
+                                    context, '/sign-in', (route) => false);
                               },
                             ),
                           ],

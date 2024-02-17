@@ -80,7 +80,7 @@ class HomePage extends StatelessWidget {
             sectionProfile(context),
             sectionWalletCard(),
             sectionLevelCard(),
-            sectionServices(),
+            sectionServices(context),
             sectionLatesTransaction(),
             sectionSend(),
             sectionFriendlyTips(),
@@ -263,7 +263,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget sectionServices() {
+  Widget sectionServices(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(top: 30),
       child: Column(
@@ -279,16 +279,22 @@ class HomePage extends StatelessWidget {
           const SizedBox(
             height: 14,
           ),
-          const Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               HomeServiceItemWidget(
                 title: 'Top Up',
                 iconUrl: 'assets/ic_topup.png',
+                onTap: () {
+                  Navigator.pushNamed(context, '/topup');
+                },
               ),
               HomeServiceItemWidget(
                 title: 'Send',
                 iconUrl: 'assets/ic_send.png',
+                onTap: () {
+                  Navigator.pushNamed(context, '/transfer');
+                },
               ),
               HomeServiceItemWidget(
                 title: 'Withdraw',

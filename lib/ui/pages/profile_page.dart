@@ -19,13 +19,13 @@ class ProfilePage extends StatelessWidget {
           horizontal: 24,
         ),
         children: [
+          const SizedBox(
+            height: 20,
+          ),
           Container(
             padding: const EdgeInsets.symmetric(
               horizontal: 30,
               vertical: 22,
-            ),
-            margin: const EdgeInsets.only(
-              top: 20,
             ),
             decoration: BoxDecoration(
               color: whiteColor,
@@ -36,9 +36,6 @@ class ProfilePage extends StatelessWidget {
                 Container(
                   width: 120,
                   height: 120,
-                  margin: const EdgeInsets.only(
-                    bottom: 16,
-                  ),
                   decoration: const BoxDecoration(
                     shape: BoxShape.circle,
                     image: DecorationImage(
@@ -63,6 +60,9 @@ class ProfilePage extends StatelessWidget {
                       ),
                     ),
                   ),
+                ),
+                const SizedBox(
+                  height: 16,
                 ),
                 Text(
                   'Shayna Hanna',
