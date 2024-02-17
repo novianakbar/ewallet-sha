@@ -18,6 +18,10 @@ class _PinPageState extends State<PinPage> {
         pinController.text = pinController.text + number;
       });
     }
+
+    if (pinController.text == '000000') {
+      Navigator.pop(context, true);
+    }
   }
 
   deletePin() {
