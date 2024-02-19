@@ -1,5 +1,6 @@
 import 'package:bank_sha/shared/theme.dart';
 import 'package:bank_sha/ui/widget/home_list_transaction_item.dart';
+import 'package:bank_sha/ui/widget/home_more_dialog.dart';
 import 'package:bank_sha/ui/widget/home_service_item.dart';
 import 'package:bank_sha/ui/widget/home_tips_item.dart';
 import 'package:bank_sha/ui/widget/home_user_item.dart';
@@ -299,10 +300,31 @@ class HomePage extends StatelessWidget {
               HomeServiceItemWidget(
                 title: 'Withdraw',
                 iconUrl: 'assets/ic_withdraw.png',
+                onTap: () {},
               ),
               HomeServiceItemWidget(
                 title: 'More',
                 iconUrl: 'assets/ic_more.png',
+                onTap: () {
+                  showGeneralDialog(
+                    barrierLabel: "Label",
+                    barrierDismissible: true,
+                    barrierColor: Colors.black.withOpacity(0.5),
+                    // useRootNavigator: false,
+                    transitionDuration: Duration(milliseconds: 700),
+                    context: context,
+                    pageBuilder: (context, anim1, anim2) {
+                      return HomeMoreDialog();
+                    },
+                    transitionBuilder: (context, anim1, anim2, child) {
+                      return SlideTransition(
+                        position: Tween(begin: Offset(0, 1), end: Offset(0, 0))
+                            .animate(anim1),
+                        child: child,
+                      );
+                    },
+                  );
+                },
               ),
             ],
           )
