@@ -311,14 +311,16 @@ class HomePage extends StatelessWidget {
                     barrierDismissible: true,
                     barrierColor: Colors.black.withOpacity(0.5),
                     // useRootNavigator: false,
-                    transitionDuration: Duration(milliseconds: 700),
+                    transitionDuration: const Duration(milliseconds: 500),
                     context: context,
                     pageBuilder: (context, anim1, anim2) {
-                      return HomeMoreDialog();
+                      return const HomeMoreDialog();
                     },
                     transitionBuilder: (context, anim1, anim2, child) {
                       return SlideTransition(
-                        position: Tween(begin: Offset(0, 1), end: Offset(0, 0))
+                        position: Tween(
+                                begin: const Offset(0, 1),
+                                end: const Offset(0, 0))
                             .animate(anim1),
                         child: child,
                       );
@@ -404,11 +406,12 @@ class HomePage extends StatelessWidget {
               fontWeight: semibold,
             ),
           ),
-          Container(
-            margin: const EdgeInsets.only(top: 14),
-            child: const SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Container(
+              margin: const EdgeInsets.symmetric(vertical: 15),
+              padding: const EdgeInsets.symmetric(horizontal: 2),
+              child: const Row(
                 children: [
                   HomeUserItem(
                     username: "yuanita",
@@ -438,7 +441,7 @@ class HomePage extends StatelessWidget {
   Widget sectionFriendlyTips() {
     return Container(
       margin: const EdgeInsets.only(
-        top: 30,
+        top: 15,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

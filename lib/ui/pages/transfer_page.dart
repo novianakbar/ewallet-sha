@@ -1,7 +1,7 @@
 import 'package:bank_sha/shared/theme.dart';
 import 'package:bank_sha/ui/widget/button.dart';
 import 'package:bank_sha/ui/widget/textfield.dart';
-import 'package:bank_sha/ui/widget/transfer_Search_result_item.dart';
+import 'package:bank_sha/ui/widget/transfer_search_result_item.dart';
 import 'package:bank_sha/ui/widget/transfer_recent_user_item.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

@@ -1,5 +1,4 @@
 import 'package:bank_sha/shared/theme.dart';
-import 'package:bank_sha/ui/widget/bank_item.dart';
 import 'package:bank_sha/ui/widget/button.dart';
 import 'package:bank_sha/ui/widget/provider_item.dart';
 import 'package:flutter/material.dart';
@@ -100,12 +99,12 @@ class DataProviderPage extends StatelessWidget {
               const ProviderItem(
                 label: 'Indosat Ooredoo',
                 imgUrl: 'assets/img_provider_indosat.png',
-                isSelected: true,
+                isSelected: false,
               ),
               const ProviderItem(
                 label: 'Singtel',
                 imgUrl: 'assets/img_provider_singtel.png',
-                isSelected: true,
+                isSelected: false,
               ),
               const SizedBox(
                 height: 12,
@@ -116,8 +115,10 @@ class DataProviderPage extends StatelessWidget {
                   fontWeight: semibold,
                   fontSize: 16,
                 ),
-                onPressed: () {
-                  Navigator.pushNamed(context, '/topup-amount');
+                onPressed: () async {
+                  //     if (await Navigator.pushNamed(context, '/pin') == true) {
+                  Navigator.pushNamed(context, '/data-package');
+                  // }
                 },
               ),
               const SizedBox(

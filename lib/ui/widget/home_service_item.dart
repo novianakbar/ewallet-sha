@@ -17,26 +17,38 @@ class HomeServiceItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Material(
-          color: Colors.transparent,
-          child: Ink(
-            decoration: BoxDecoration(
-              color: whiteColor,
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: InkWell(
-              borderRadius: BorderRadius.circular(20),
-              splashColor: Colors.grey.withOpacity(0.5), // Warna splash
-              onTap: onTap,
-              child: SizedBox(
-                width: 70,
-                height: 70,
-                child: Center(
-                  child: Image.asset(
-                    iconUrl,
-                    width: 26,
-                    height: 26,
-                    color: blackColor,
+        Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            boxShadow: [
+              BoxShadow(
+                color: greyColor,
+                offset: Offset(0, 2),
+                blurRadius: 2,
+              ),
+            ],
+          ),
+          child: Material(
+            color: Colors.transparent,
+            child: Ink(
+              decoration: BoxDecoration(
+                color: whiteColor,
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: InkWell(
+                borderRadius: BorderRadius.circular(20),
+                splashColor: Colors.grey.withOpacity(0.5), // Warna splash
+                onTap: onTap,
+                child: SizedBox(
+                  width: 70,
+                  height: 70,
+                  child: Center(
+                    child: Image.asset(
+                      iconUrl,
+                      width: 26,
+                      height: 26,
+                      color: blackColor,
+                    ),
                   ),
                 ),
               ),
